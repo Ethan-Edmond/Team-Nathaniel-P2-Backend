@@ -67,7 +67,7 @@ class PurchasesControllerTest {
         this.mockMvc.perform(get("/getAllPurchases"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().json("[{\"orderDate\":\"Today\",\"customer\":{\"customerId\":0,\"username\":\"BushyBusc\",\"password\":\"password\",\"name\":\"Steve Buscemi\"},\"gameOrders\":[]}]"));
+                .andExpect(content().json("[{\"orderDate\":\"Today\",\"customer\":{\"customerId\":0,\"username\":\"BushyBusc\",\"name\":\"Steve Buscemi\"},\"gameOrders\":[]}]"));
     }
 
     @Test
@@ -78,7 +78,7 @@ class PurchasesControllerTest {
                 .content("{\"orderDate\":\"Tomorrow\",\"customer\":{\"customerId\":0,\"username\":\"BushyBusc\",\"password\":\"password\",\"name\":\"Steve Buscemi\"},\"gameOrders\":[]}"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().json("{\"orderDate\":\"Tomorrow\",\"customer\":{\"customerId\":0,\"username\":\"BushyBusc\",\"password\":\"password\",\"name\":\"Steve Buscemi\"},\"gameOrders\":[]}"));
+                .andExpect(content().json("{\"orderDate\":\"Tomorrow\",\"customer\":{\"customerId\":0,\"username\":\"BushyBusc\",\"name\":\"Steve Buscemi\"},\"gameOrders\":[]}"));
     }
 
     @Test
@@ -87,7 +87,7 @@ class PurchasesControllerTest {
         this.mockMvc.perform(get("/findPurchase/0"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().json("{\"orderDate\":\"Tomorrow\",\"customer\":{\"customerId\":0,\"username\":\"BushyBusc\",\"password\":\"password\",\"name\":\"Steve Buscemi\"},\"gameOrders\":[]}"));
+                .andExpect(content().json("{\"orderDate\":\"Tomorrow\",\"customer\":{\"customerId\":0,\"username\":\"BushyBusc\",\"name\":\"Steve Buscemi\"},\"gameOrders\":[]}"));
     }
 
     @Test
@@ -110,6 +110,6 @@ class PurchasesControllerTest {
                 .content("{\"orderDate\":\"Tomorrow\",\"customer\":{\"customerId\":0,\"username\":\"BushyBusc\",\"password\":\"password\",\"name\":\"Steve Buscemi\"},\"gameOrders\":[]}"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().json("{\"orderDate\":\"Tomorrow\",\"customer\":{\"customerId\":0,\"username\":\"BushyBusc\",\"password\":\"password\",\"name\":\"Steve Buscemi\"},\"gameOrders\":[]}"));
+                .andExpect(content().json("{\"orderDate\":\"Tomorrow\",\"customer\":{\"customerId\":0,\"username\":\"BushyBusc\",\"name\":\"Steve Buscemi\"},\"gameOrders\":[]}"));
     }
 }

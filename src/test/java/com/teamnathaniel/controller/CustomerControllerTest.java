@@ -49,7 +49,7 @@ class CustomerControllerTest {
         this.mockMvc.perform(get("/getAllCustomers"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().json("[{\"name\": \"Steve Buscemi\", \"username\": \"steve\", \"password\": \"password\"}]"));
+                .andExpect(content().json("[{\"name\": \"Steve Buscemi\", \"username\": \"steve\"}]"));
     }
 
     @Test
@@ -60,7 +60,7 @@ class CustomerControllerTest {
                 .content("{\"name\": \"Steve Buscemi\", \"username\": \"steve\", \"password\": \"password\"}"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().json("{\"name\": \"Steve Buscemi\", \"username\": \"steve\", \"password\": \"password\"}"));
+                .andExpect(content().json("{\"name\": \"Steve Buscemi\", \"username\": \"steve\"}"));
     }
 
     @Test
@@ -69,7 +69,7 @@ class CustomerControllerTest {
         this.mockMvc.perform(get("/findCustomer/0"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().json("{\"name\": \"Steve Buscemi\", \"username\": \"steve\", \"password\": \"password\"}"));
+                .andExpect(content().json("{\"name\": \"Steve Buscemi\", \"username\": \"steve\"}"));
     }
 
     @Test
@@ -91,7 +91,7 @@ class CustomerControllerTest {
                 .content("{\"name\": \"Sleeve Bushcemy\", \"username\": \"stove\", \"password\": \"possward\"}"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().json("{\"name\": \"Steve Buscemi\", \"username\": \"steve\", \"password\": \"password\"}"));
+                .andExpect(content().json("{\"name\": \"Steve Buscemi\", \"username\": \"steve\"}"));
     }
 
     @Test
@@ -102,6 +102,6 @@ class CustomerControllerTest {
                 .content("{\"name\": \"Steve Buscemi\", \"username\": \"steve\", \"password\": \"password\"}"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().json("{\"name\": \"Steve Buscemi\", \"username\": \"steve\", \"password\": \"password\"}"));
+                .andExpect(content().json("{\"name\": \"Steve Buscemi\", \"username\": \"steve\"}"));
     }
 }
